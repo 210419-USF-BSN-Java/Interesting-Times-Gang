@@ -1,8 +1,13 @@
 # Members
+
 Andrew Davis
+
 Uriah Omamalin
+
 Christopher Espinal
+
 Kevin Aarstad
+
 Teresa Fitzgerald
 
 # Project2
