@@ -1,3 +1,10 @@
+# Members
+Andrew Davis
+Uriah Omamalin
+Christopher Espinal
+Kevin Aarstad
+Teresa Fitzgerald
+
 # Project2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
