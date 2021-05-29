@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
   signIn() {
     this.auth.login(this.username, this.password).subscribe(
       response => {
+        console.log(response);
         this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
       },
       err => {
-        console.error("Error");
+        console.error("Error: " + err);
       },
       () => {
         console.log("Complete");
