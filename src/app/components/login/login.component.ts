@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
   signIn() {
     this.auth.login(this.username, this.password).subscribe(
       response => {
-        // this.router.navigate('dashboard') need to route somewhere? dashboard maybe
-
-
+        this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
       },
       err => {
         console.error("Error");

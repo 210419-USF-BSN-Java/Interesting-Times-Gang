@@ -19,7 +19,10 @@ export class AuthService {
       password: password,
     }
 
-    return this.http.request(this.url, loginInfo).pipe(
+    return this.http.post(
+      this.url,
+      loginInfo,
+    ).pipe(
       map(response => response as User)
     );
 
