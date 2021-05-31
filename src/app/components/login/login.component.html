@@ -1,5 +1,4 @@
-<p>Login works</p>
-
+<h1>Log in to your Cosmogram!</h1>
 <form>
     <label for="username">Username: </label>
     <input type="text" [(ngModel)]="username" id="username" placeholder="username">
@@ -8,4 +7,6 @@
     <input type="password" [(ngModel)]="password" id="password" placeholder="password">
 
     <button type="button" (click)="signIn()">Sign In</button>
-</form>>
+</form>
+
+<h3 routerLink="/register" >Register Here!</h3>

@@ -20,12 +20,13 @@ export class LoginComponent implements OnInit {
 
   signIn() {
     this.auth.login(this.username, this.password).subscribe(
+      // observer
       response => {
         console.log(response);
         this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
       },
       err => {
-        console.error("Error: " + err);
+        this.message = "Please try again";
       },
       () => {
         console.log("Complete");
