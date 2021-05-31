@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user';
 
 @Injectable({
@@ -24,30 +24,32 @@ export class AuthService {
       "http://localhost:8080/user/login",
       loginInfo,
     ).pipe(
+      tap(response => console.log(response)),
       map(response => response as User)
     )
 
   }
 
   register(
-    username: string,
-    password: string,
     firstname: string,
     lastname: string,
-    email: string,
+    username: string,
+    password: string,
+    roleId: string = "1",
   ): Observable<User> {
 
     let registerInfo = {
       username: username,
       password: password,
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
+      firstName: firstname,
+      lastName: lastname,
+      roleId: roleId,
     }
 
-    return this.http.post("http://localhost:8080/user/register", {
+    return this.http.post(
+      "http://localhost:8080/user/register",
       registerInfo
-    }).pipe(map(response => response as User))
+      ).pipe(map(response => response as User))
   }
 }
 

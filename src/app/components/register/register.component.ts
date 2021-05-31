@@ -12,9 +12,9 @@ import { User } from 'src/app/models/user';
 export class RegisterComponent implements OnInit {
   firstname: string = "";
   lastname: string = "";
-  email: string = "";
   username: string = "";
   password: string = "";
+  password2: string = "";
   message: string = "";
 
   submitted: boolean = false;
@@ -33,20 +33,24 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    if (!this.email) {
+    if (this.password != this.password2){
+      this.message = "Passwords didn't match! Please try again!"
       return;
     }
 
     this.auth.register(
       this.firstname,
       this.lastname,
-      this.email,
       this.username,
       this.password,
     ).subscribe(
       response => {
         console.log(response);
-        this.router.navigate(['login']); //need to route somewhere? dashboard maybe
+        if (response === null) {
+          this.message = "This Didn't Work. Please Try Again!"
+        } else {
+          this.router.navigate(['login']); //need to route somewhere? dashboard maybe
+        }
       },
       err => {
         console.error("Error: " + err);

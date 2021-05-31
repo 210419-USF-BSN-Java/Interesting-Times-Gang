@@ -23,10 +23,15 @@ export class LoginComponent implements OnInit {
       // observer
       response => {
         console.log(response);
-        this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
+        if (response === null) {
+          this.message = "Didn't work. Please Try Again!"
+        } else {
+          this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
+
+        }
       },
       err => {
-        this.message = "Please try again";
+        console.error(err);
       },
       () => {
         console.log("Complete");
