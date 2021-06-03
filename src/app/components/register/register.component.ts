@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormsModule } from '@angular/forms';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-register',
@@ -49,7 +47,7 @@ export class RegisterComponent implements OnInit {
         if (response === null) {
           this.message = "This Didn't Work. Please Try Again!"
         } else {
-          this.router.navigate(['login']); //need to route somewhere? dashboard maybe
+          this.router.navigate(['']); //need to route somewhere? dashboard maybe
         }
       },
       err => {

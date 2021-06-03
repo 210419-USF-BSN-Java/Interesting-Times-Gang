@@ -1,10 +1,10 @@
 <h1>Log in to your Cosmogram!</h1>
 <form>
     <label for="username">Username: </label>
-    <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="username">
+    <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="username" required>
 
     <label for="password">Password: </label>
-    <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="password">
+    <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="password" required>
 
     <button type="button" (click)="signIn()">Sign In</button>
 </form>

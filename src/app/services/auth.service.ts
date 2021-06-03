@@ -24,7 +24,6 @@ export class AuthService {
       "http://localhost:8080/user/login",
       loginInfo,
     ).pipe(
-      tap(response => console.log(response)),
       map(response => response as User)
     )
 
@@ -49,7 +48,24 @@ export class AuthService {
     return this.http.post(
       "http://localhost:8080/user/register",
       registerInfo
-      ).pipe(map(response => response as User))
+    ).pipe(map(response => response as User))
+  }
+
+  updateInfo(
+    user: User,
+  ): Observable<User> {
+    return this.http.post(
+      "http://localhost:8080/user/update-info",
+      user
+    ).pipe(map(response => response as User))
+  }
+
+  getUserInfo(): Observable<User> {
+    return this.http.get(
+      "http://localhost:8080/user/view-info"
+    ).pipe(
+      map(response => response as User)
+    )
   }
 }
 
