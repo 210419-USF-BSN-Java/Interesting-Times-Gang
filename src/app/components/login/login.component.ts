@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
         if (response === null) {
           this.message = "Didn't work. Please Try Again!"
         } else {
-          var num = new Number(10);
-          num = Number(response.userId);
-          sessionStorage.setItem("user", response.username);
+          // var num = new Number(10);
+          // num = Number(response.userId);
+          // sessionStorage.setItem("user", response.username);
+          
           this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
 
         }
