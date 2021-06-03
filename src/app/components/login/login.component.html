@@ -1,10 +1,14 @@
-<h2>Login</h2>
+<h1>Log in to your Cosmogram!</h1>
 <form>
-    <label for="username" >Username: </label>
-    <input type="text" [(ngModel)]="username" id="username" placeholder="username">
+    <label for="username">Username: </label>
+    <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="username" required>
 
-    <label for="password" >Password: </label>
-    <input type="password" [(ngModel)]="password" id="password" placeholder="password">
+    <label for="password">Password: </label>
+    <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="password" required>
 
-    <button (click)="signIn()">Sign In</button>
+    <button type="button" (click)="signIn()">Sign In</button>
 </form>
+
+<h3 routerLink="/register">Register Here!</h3>
+
+<h3 [(ngModel)]="message">{{ message }}</h3>
