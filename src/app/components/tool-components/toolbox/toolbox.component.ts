@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Tool } from '../tool';
 
 @Component({
   selector: 'app-toolbox',
@@ -7,11 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ToolboxComponent implements OnInit {
   @Input() title?: string;
-  @Input() toolList ?: {};
+  @Input() toolbox?: Tool[];
+  @Input() selectedToolbox?: string;
+  @Output() notify = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
