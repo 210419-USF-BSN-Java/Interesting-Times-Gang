@@ -8,6 +8,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
+
   constructor(private http: HttpClient) { }
 
   login(
@@ -55,14 +56,19 @@ export class AuthService {
     user: User,
   ): Observable<User> {
     return this.http.post(
-      "http://localhost:8080/user/update-info",
+      "http://localhost:8080/user/update",
       user
-    ).pipe(map(response => response as User))
+    ).pipe(
+      tap(response => console.log(response)),
+      map(response => response as User)
+    )
   }
 
   getUserInfo(): Observable<User> {
+
     return this.http.get(
-      "http://localhost:8080/user/view-info"
+      "http://localhost:8080/user/view-info",
+      { headers: { "Authorization": sessionStorage.getItem("user") || "" } }
     ).pipe(
       map(response => response as User)
     )

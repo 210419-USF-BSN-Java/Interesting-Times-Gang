@@ -1,0 +1,19 @@
+<div *ngIf="show">
+
+    <h3>Toolbar</h3>
+    <ul>
+        <li>
+            <app-toolbox [title]="'Account Info'" routerLink="updateInfo" [toolList]=""></app-toolbox>
+            <!--
+                - Tool Box Input: <K: Title, V: routerLink> <K: Tool List, V: tool routerLinks>
+                    - Each Tool Input <K: toolname, V: routerLink>
+            -->
+        </li>
+        <li>
+            <div>Toolbox 2</div>
+        </li>
+        <li>
+            <div>Toolbox 3</div>
+        </li>
+    </ul>
+</div>
