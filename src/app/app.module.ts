@@ -12,6 +12,7 @@ import { UpdateInfoComponent } from './components/update-info/update-info.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ToolbarComponent } from './components/tool-components/toolbar/toolbar.component';
 import { ToolboxComponent } from './components/tool-components/toolbox/toolbox.component';
+import { SingleImageComponent } from './components/single-image/single-image.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ToolboxComponent } from './components/tool-components/toolbox/toolbox.c
     NavbarComponent,
     ToolbarComponent,
     ToolboxComponent,
+    SingleImageComponent
   ],
   imports: [
     BrowserModule,
