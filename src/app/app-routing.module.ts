@@ -10,6 +10,9 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "updateInfo", component: UpdateInfoComponent },
+  // search image, search image component
+  // create tag, create tag component
+  // tag management
 ]
 
 @NgModule({
