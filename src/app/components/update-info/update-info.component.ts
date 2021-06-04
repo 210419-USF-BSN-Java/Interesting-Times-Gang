@@ -33,14 +33,13 @@ export class UpdateInfoComponent implements OnInit {
   }
 
   update() {
+    console.log(this.user);
     if (this.user != null) {
       this.auth.updateInfo(this.user).subscribe(
-        response => this.user = response,
+        response => this.message = response.toString(),
       )
     } else {
       this.message = "Please complete the form!";
     }
   }
-
-
 }
