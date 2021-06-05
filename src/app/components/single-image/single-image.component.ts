@@ -8,9 +8,9 @@ import { images, albums, DailyImage } from '../../images';
 })
 
 export class SingleImageComponent implements OnChanges {
-  // @Input() image?: DailyImage;
+   @Input() image?: DailyImage;
   imageArray = images;
-  image: DailyImage = this.imageArray[0];
+  // image: DailyImage = this.imageArray[0];
   albums = albums;
   hoveredRating: number = 0;
   finalRating: number = 0;
