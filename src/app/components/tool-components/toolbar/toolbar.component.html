@@ -6,13 +6,13 @@
             <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Account'" [toolbox]="accountToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Search'" routerLink="" [toolbox]="searchToolbox"></app-toolbox>
+            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Search'" [toolbox]="searchToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Albums'" routerLink="" [toolbox]="albumsToolbox"></app-toolbox>
+            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Albums'" [toolbox]="albumsToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Info'" routerLink="" [toolbox]="infoToolbox"></app-toolbox>
+            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Info'" [toolbox]="infoToolbox"></app-toolbox>
         </li>
     </ul>
 </div>
