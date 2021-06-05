@@ -3,16 +3,16 @@
     <h3>Toolbar</h3>
     <ul>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolBox" [title]="'Account'" routerLink="/updateInfo" [toolbox]="accountToolBox"></app-toolbox>
+            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Account'" [toolbox]="accountToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolBox" [title]="'Search'" routerLink="" [toolbox]="searchToolBox"></app-toolbox>
+            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Search'" routerLink="" [toolbox]="searchToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolBox" [title]="'Albums'" routerLink="" [toolbox]="albumsToolBox"></app-toolbox>
+            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Albums'" routerLink="" [toolbox]="albumsToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox [selectedToolbox]="selectedToolBox" [title]="'Info'" routerLink="" [toolbox]="infoToolBox"></app-toolbox>
+            <app-toolbox [selectedToolbox]="selectedToolbox" [title]="'Info'" routerLink="" [toolbox]="infoToolbox"></app-toolbox>
         </li>
     </ul>
 </div>

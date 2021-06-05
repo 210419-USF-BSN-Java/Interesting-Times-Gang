@@ -11,7 +11,7 @@ export class ToolboxComponent implements OnInit {
   @Input() title?: string;
   @Input() toolbox?: Tool[];
   @Input() selectedToolbox?: string;
-  @Output() notify = new EventEmitter<string>();
+  @Output() tellToolBar = new EventEmitter<string>();
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class ToolboxComponent implements OnInit {
   }
 
   showThisToolbox(){
-    this.notify.emit(this.title);
+    this.tellToolBar.emit(this.title);
   }
 
 
