@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { images, DailyImage } from '../images';
+import { images, DailyImage } from '../../images';
 
 @Component({
   selector: 'app-multi-image',

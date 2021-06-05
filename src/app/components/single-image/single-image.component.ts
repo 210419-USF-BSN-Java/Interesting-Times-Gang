@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input } from '@angular/core';
-import { images, albums, DailyImage } from '../../images';
+import { tags, albums, DailyImage } from '../images';
 
 @Component({
   selector: 'app-single-image',
@@ -8,14 +8,15 @@ import { images, albums, DailyImage } from '../../images';
 })
 
 export class SingleImageComponent implements OnChanges {
-   @Input() image?: DailyImage;
-  imageArray = images;
-  // image: DailyImage = this.imageArray[0];
+  @Input() image?: DailyImage;
   albums = albums;
+  tags = tags;
   hoveredRating: number = 0;
   finalRating: number = 0;
   alertStr: string = "";
-  dropdown: string = "";
+  dropdownAlbum: string = "";
+  dropdownTag: string = "";
+  userRole: number = 2;
 
   mouseEnter(num: number) {
     if (this.finalRating == 0)
@@ -33,14 +34,23 @@ export class SingleImageComponent implements OnChanges {
     this.finalRating = num;
     this.alertStr = `You have given <b>${this.image?.title}</b> a <b>${this.finalRating}-star rating</b>.`;
   }
-  addTo(album: string) {
+  addToAlbum(album: string) {
     this.alertStr = `You have added <b>${this.image?.title}</b> to <b>${album}</b>.`;
   }
+  addTag(tag: string) {
+    this.alertStr = `You have tagged <b>${this.image?.title}</b> as <b>${tag}</b>.`;
+  }
   showAlbum() {
-    this.dropdown = 'block';
+    this.dropdownAlbum = 'block';
   }
   hideAlbum() {
-    this.dropdown = 'none';
+    this.dropdownAlbum = 'none';
+  }
+  showTag() {
+    this.dropdownTag = 'block';
+  }
+  hideTag() {
+    this.dropdownTag = 'none';
   }
   ngOnChanges() {
     this.hoveredRating = 0;
