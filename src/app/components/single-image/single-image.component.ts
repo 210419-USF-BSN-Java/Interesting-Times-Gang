@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input } from '@angular/core';
-import { tags, albums, DailyImage } from '../images';
+import { tags, albums, DailyImage } from '../../images';
 
 @Component({
   selector: 'app-single-image',
