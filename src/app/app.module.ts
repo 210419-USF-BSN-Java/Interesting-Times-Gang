@@ -13,6 +13,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ToolbarComponent } from './components/tool-components/toolbar/toolbar.component';
 import { ToolboxComponent } from './components/tool-components/toolbox/toolbox.component';
 import { SingleImageComponent } from './components/single-image/single-image.component';
+import { MultiImageComponent } from './components/multi-image/multi-image.component';
+import { SearchImageComponent } from './components/search-image/search-image.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SingleImageComponent } from './components/single-image/single-image.com
     NavbarComponent,
     ToolbarComponent,
     ToolboxComponent,
-    SingleImageComponent
+    SingleImageComponent,
+    MultiImageComponent,
+    SearchImageComponent
   ],
   imports: [
     BrowserModule,
