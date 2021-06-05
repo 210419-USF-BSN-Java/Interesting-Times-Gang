@@ -11,11 +11,15 @@ export class ToolboxComponent implements OnInit {
   @Input() title?: string;
   @Input() toolbox?: Tool[];
   @Input() selectedToolbox?: string;
-  @Output() notify = new EventEmitter();
+  @Output() tellToolBar = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showThisToolbox(){
+    this.tellToolBar.emit(this.title);
   }
 
 

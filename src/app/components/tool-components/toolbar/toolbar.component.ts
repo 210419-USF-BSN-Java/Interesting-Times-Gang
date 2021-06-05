@@ -12,11 +12,11 @@ import { Tool } from '../tool';
 })
 export class ToolbarComponent implements OnInit {
   @Input() show: Boolean = false;
-  accountToolBox: Tool[] = accountTools;
-  searchToolBox: Tool[] = searchTools;
-  albumsToolBox: Tool[] = albumsTools;
-  infoToolBox: Tool[] = infoTools;
-  selectedToolBox: string = "";
+  accountToolbox: Tool[] = accountTools;
+  searchToolbox: Tool[] = searchTools;
+  albumsToolbox: Tool[] = albumsTools;
+  infoToolbox: Tool[] = infoTools;
+  selectedToolbox: string = "";
 
 
   constructor() { }
@@ -24,7 +24,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  OnNotify(toolBoxTitle: string){
-    this.selectedToolBox = toolBoxTitle;
+  selectToolbox(toolBoxTitle: string): void{
+    this.selectedToolbox = toolBoxTitle;
   }
 }

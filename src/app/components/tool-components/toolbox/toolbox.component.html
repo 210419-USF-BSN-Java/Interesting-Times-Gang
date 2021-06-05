@@ -1,4 +1,4 @@
-<h3>{{ title }}</h3>
+<h3 (click)="showThisToolbox()">{{ title }}</h3>
 <div *ngIf="selectedToolbox === title">
     <div *ngFor="let tool of toolbox">
         <h4 routerLink="tool.url">{{ tool.title }}</h4>
