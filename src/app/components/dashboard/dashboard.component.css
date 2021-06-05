@@ -1,0 +1,17 @@
+.div-wrapper-header-main {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+
+    height: 7em;
+}
+.h1-main-header {
+    grid-row: 1;
+    grid-column: 1;
+
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+
+    margin: 0px;
+}
