@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   password: string = "";
   message: string = "";
 
+  /* Style properties */
+  loginHeight: Number = window.innerHeight;
+
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
