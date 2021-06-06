@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { accountTools } from '../account-tools';
 import { albumsTools } from '../albumsTools';
 import { infoTools } from '../infoTools';
@@ -17,6 +17,7 @@ export class ToolbarComponent implements OnInit {
   albumsToolbox: Tool[] = albumsTools;
   infoToolbox: Tool[] = infoTools;
   selectedToolbox: string = "";
+  title: string = "Welcome to Cosmogram!";
 
 
   constructor() { }
@@ -26,5 +27,6 @@ export class ToolbarComponent implements OnInit {
 
   selectToolbox(toolBoxTitle: string): void{
     this.selectedToolbox = toolBoxTitle;
+    this.title = toolBoxTitle;
   }
 }
