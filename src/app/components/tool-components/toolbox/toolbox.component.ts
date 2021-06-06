@@ -21,7 +21,4 @@ export class ToolboxComponent implements OnInit {
   showThisToolbox(){
     this.tellToolBar.emit(this.title);
   }
-
-
-
 }

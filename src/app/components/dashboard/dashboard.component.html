@@ -3,12 +3,22 @@
         <div class="div-inner-wrapper-header-main">
             <h1 class="h1-main-header">Cosmogram</h1>
         </div>
-        <app-navbar></app-navbar>
+        <app-navbar (emitComponentName)="changeComponent($event)"></app-navbar>
     </div>
-    
-    <div class="div-body-main">
+
+    <div [ngSwitch]="currentComponent" class="div-body-main">
         <button (click)="showImage()">clicky</button>
-        <app-single-image [image]="img"></app-single-image>
-        
+        <div *ngSwitchCase="'default'">
+            <app-single-image [image]="img"></app-single-image>
+        </div>
+        <div *ngSwitchCase="'Search'">
+            <app-search-image></app-search-image>
+        </div>
+        <div *ngSwitchCase="'Albums'">
+            <app-multi-image></app-multi-image>
+        </div>
+        <div *ngSwitchCase="'Info'">
+            <app-update-info></app-update-info>
+        </div>
     </div>
 </div>

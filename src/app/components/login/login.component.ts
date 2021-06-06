@@ -25,15 +25,15 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.username, this.password).subscribe(
       // observer
       response => {
-        console.log(response);
+        // console.log(response);
         if (response === null) {
           this.message = "Didn't work. Please Try Again!"
         } else {
           var num = new Number(10);
           num = Number(response.userId);
-          sessionStorage.setItem("user", response.username);
+          console.log("signin method: " + response.userId);
+          sessionStorage.setItem("userId", response.userId.toString());
           this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
-
         }
       },
       err => {

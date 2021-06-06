@@ -25,6 +25,7 @@ export class AuthService {
       "http://localhost:8080/user/login",
       loginInfo,
     ).pipe(
+      // tap(response => console.log("post method: " + response)),
       map(response => response as User)
     )
 
@@ -79,4 +80,8 @@ export class AuthService {
   }
 }
 
+
+function tag(arg0: void): import("rxjs").OperatorFunction<Object, unknown> {
+  throw new Error('Function not implemented.');
+}
 

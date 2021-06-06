@@ -1,4 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Album } from 'src/app/models/album';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +10,20 @@ import { Component, OnInit, Output } from '@angular/core';
 export class NavbarComponent implements OnInit {
   showToolbar: boolean = false;
   title?: string = sessionStorage.getItem("user") || "";
+  @Input() currentComponent: string = "";
+  @Output() emitComponentName = new EventEmitter<string>();
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    let userAlbumsUrl = ("http://localhost:8080/album/?id=" + sessionStorage.getItem("userId"));
+    this.http.get<Album[]>(userAlbumsUrl).subscribe(
+      response => {
+        console.log(response);
+        return response;
+      }
+    );
   }
 
   toggleToolbar(): void {
@@ -24,6 +36,7 @@ export class NavbarComponent implements OnInit {
 
   setTitle(title: string): void {
     this.title = title;
+    this.emitComponentName.emit(title);
   }
 
 }
