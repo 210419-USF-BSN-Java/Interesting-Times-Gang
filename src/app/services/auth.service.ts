@@ -68,7 +68,11 @@ export class AuthService {
 
     return this.http.get(
       "http://localhost:8080/user/view-info",
-      { headers: { "Authorization": sessionStorage.getItem("user") || "" } }
+      {
+        headers: {
+          "Authorization": sessionStorage.getItem("user") || ""
+        }
+      }
     ).pipe(
       map(response => response as User)
     )
