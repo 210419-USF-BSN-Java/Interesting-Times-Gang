@@ -3,104 +3,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      .dropbtn {
-        background-color: #3498DB;
-        color: white;
-        padding: 8px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        width: 160px;
-      }
-      .dropbtn:hover {
-        background-color: #2980B9;
-      }
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-radius: 5px;
-        z-index: 1;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      .dropdown-content a:hover {
-        border-radius: 5px;
-        background-color: #ddd
-      }
-      .main {
-        width: 800px;
-        padding: 32px;
-        border: 5px solid #1d1135;
-        border-radius: 5px;
-        margin: 5px auto;
-        background-color: #a9d5f4;
-      }
-      .img-frame {
-        width: 100%;
-        height: 552px;
-        border-top: 3px solid #1d1135;
-        border-bottom: 3px solid #1d1135;
-        position: relative;
-        background: rgb(169,213,244);
-        background: linear-gradient(90deg, rgba(169,213,244,1) 1%, rgba(54,117,171,1) 25%, rgba(54,117,171,1) 50%, rgba(54,117,171,1) 75%, rgba(169,213,244,1) 99%);
-      }
-      img {
-        max-width: 95%;
-        max-height: 95%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 5px;
-      }
-      .fa-star {
-        cursor: pointer;
-        font-size: 32px;
-      }
-      .checked {
-        color: orange;
-      }
-      .right {
-        text-align: right
-      }
-      .center {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
+</head>
+<div>
+    <div class="main"> 
       <div class="img-frame" *ngIf="image">
         <img src={{image.hdurl}}/>
       </div>
       <br>
       <div class="row" *ngIf="image">
         <div class="col-sm-3">
-          <span [ngClass]="hoveredRating >= 1 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(1)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(1)"></span>
-          <span [ngClass]="hoveredRating >= 2 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(2)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(2)"></span>
-          <span [ngClass]="hoveredRating >= 3 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(3)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(3)"></span>
-          <span [ngClass]="hoveredRating >= 4 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(4)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(4)"></span>
-          <span [ngClass]="hoveredRating >= 5 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(5)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(5)"></span>
-          <br><br>
-          <div class="dropdown" (mouseleave)="hideAlbum()">
-            <button id="album" class="dropbtn" (mouseenter)="showAlbum()">add to album</button>
-            <div id="album-dropdown" class="dropdown-content" [ngStyle]="{'display': dropdown}">
-              <a href="#" *ngFor="let album of albums" (click)="addTo(album.name)">{{ album.name }}</a>
+            <span [ngClass]="hoveredRating >= 1 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(1)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(1)"></span>
+            <span [ngClass]="hoveredRating >= 2 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(2)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(2)"></span>
+            <span [ngClass]="hoveredRating >= 3 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(3)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(3)"></span>
+            <span [ngClass]="hoveredRating >= 4 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(4)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(4)"></span>
+            <span [ngClass]="hoveredRating >= 5 ? 'fa fa-star checked' : 'fa fa-star'" (mouseenter)="mouseEnter(5)" (mouseleave)="resetHoveredRating()" (click)="setFinalRating(5)"></span>
+            <br>
+            <br>
+
+            <div class="dropdown" (mouseleave)="hideAlbum()">
+              <button id="album" class="dropbtn" (mouseenter)="showAlbum()">add to album</button>
+              <div id="album-dropdown" class="dropdown-content" [ngStyle]="{'display': dropdownAlbum}">
+                <a href="#" *ngFor="let album of albums" (click)="addToAlbum(album.name)">{{ album.name }}</a>
+              </div>
             </div>
-          </div>
+
+            <div class="dropdown" (mouseleave)="hideTag()" *ngIf="userRole==2">
+            <!--add *ngIf="user.roleId=2" or similar to above tag-->
+              <br>
+              <button id="tag" class="dropbtn" (mouseenter)="showTag()">add tag</button>
+              <div id="tag-dropdown" class="dropdown-content" [ngStyle]="{'display': dropdownTag}">
+                <a href="#" *ngFor="let tag of tags" (click)="addTag(tag.name)">{{ tag.name }}</a>
+              </div>
+            </div>
+
         </div>
         <div class="col-sm-9 right">
           <h1>{{ image.title }}</h1>
@@ -111,4 +46,4 @@
       <p *ngIf="image">{{ image.explanation }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  </body>
+</div>

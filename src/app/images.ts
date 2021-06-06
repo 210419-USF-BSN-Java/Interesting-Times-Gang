@@ -102,3 +102,15 @@ export const albums = [
     name: "other",
   }
 ]
+
+export const tags = [
+  {
+    name: "tag 1",
+  },
+  {
+    name: "tag 2",
+  },
+  {
+    name: "tag 3",
+  },
+]
