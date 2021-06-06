@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           var num = new Number(10);
           num = Number(response.id);
           console.log("signin method: " + response);
-          sessionStorage.setItem("username", response.id.toString());
+          sessionStorage.setItem("userId", response.id.toString());
           this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
         }
       },
