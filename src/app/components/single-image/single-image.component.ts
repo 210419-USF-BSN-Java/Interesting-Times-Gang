@@ -1,5 +1,6 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { tags, albums, DailyImage } from '../../images';
+import { Image } from '../../models/image'
 
 @Component({
   selector: 'app-single-image',
@@ -8,7 +9,7 @@ import { tags, albums, DailyImage } from '../../images';
 })
 
 export class SingleImageComponent implements OnChanges {
-  @Input() image?: DailyImage;
+  @Input() image?: Image;
   albums = albums;
   tags = tags;
   hoveredRating: number = 0;
@@ -56,5 +57,7 @@ export class SingleImageComponent implements OnChanges {
     this.hoveredRating = 0;
     this.finalRating = 0;
     this.alertStr = "";
+    console.log(this.image);
+    console.log(this.image?.date);
   }
 }
