@@ -13,7 +13,11 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) { }
   img?: Image;
   url = 'http://localhost:8080/image/random/?userId=2'
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.http.get<Image>(this.url)
+    .subscribe((data: Image) => this.img = data);
+    console.log(this.img);
+   }
   showImage() {
     this.http.get<Image>(this.url)
       .subscribe((data: Image) => this.img = data);
