@@ -15,6 +15,8 @@ import { ToolboxComponent } from './components/tool-components/toolbox/toolbox.c
 import { SingleImageComponent } from './components/single-image/single-image.component';
 import { MultiImageComponent } from './components/multi-image/multi-image.component';
 import { SearchImageComponent } from './components/search-image/search-image.component';
+import { SearchImageDateComponent } from './components/search-image-date/search-image-date.component';
+import { SearchImageRangeComponent } from './components/search-image-range/search-image-range.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SearchImageComponent } from './components/search-image/search-image.com
     ToolboxComponent,
     SingleImageComponent,
     MultiImageComponent,
-    SearchImageComponent
+    SearchImageComponent,
+    SearchImageDateComponent,
+    SearchImageRangeComponent
   ],
   imports: [
     BrowserModule,

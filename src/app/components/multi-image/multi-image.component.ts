@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { images, DailyImage } from '../../images';
+import { Component, Input } from '@angular/core';
+import { Image } from '../../models/image';
 
 @Component({
   selector: 'app-multi-image',
@@ -7,9 +7,9 @@ import { images, DailyImage } from '../../images';
   styleUrls: ['./multi-image.component.css']
 })
 export class MultiImageComponent {
-  imageArray = images;
-  currentImg?: DailyImage;
-  selectImg(image: DailyImage) {
+  @Input() imageArray? = Array<Image>();
+  currentImg?: Image;
+  selectImg(image: Image) {
     this.currentImg = image;
     console.log(this.currentImg);
   }
