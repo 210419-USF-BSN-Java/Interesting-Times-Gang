@@ -1,6 +1,7 @@
 import { Component, OnChanges, Input } from '@angular/core';
 import { tags, albums, DailyImage } from '../../images';
-import { Image } from '../../models/image'
+import { Image } from '../../models/image';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-single-image',
@@ -18,6 +19,7 @@ export class SingleImageComponent implements OnChanges {
   dropdownAlbum: string = "";
   dropdownTag: string = "";
   userRole: number = 2;
+  constructor(private http: HttpClient) { }
 
   mouseEnter(num: number) {
     if (this.finalRating == 0)
