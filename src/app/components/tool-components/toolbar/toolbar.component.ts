@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { accountTools } from '../account-tools';
 import { albumsTools } from '../albumsTools';
 import { infoTools } from '../infoTools';
@@ -17,7 +18,7 @@ export class ToolbarComponent implements OnInit {
   albumsToolbox: Tool[] = albumsTools;
   infoToolbox: Tool[] = infoTools;
   selectedToolbox: string = "";
-  title: string = "Welcome to Cosmogram!";
+  @Output() notifyNavBarTitle = new EventEmitter();
 
 
   constructor() { }
@@ -25,8 +26,8 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectToolbox(toolBoxTitle: string): void{
+  selectToolbox(toolBoxTitle: string): void {
     this.selectedToolbox = toolBoxTitle;
-    this.title = toolBoxTitle;
+    this.notifyNavBarTitle.emit(toolBoxTitle);
   }
 }

@@ -7,6 +7,7 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   showToolbar: boolean = false;
+  title: string = "Welcome to Cosmogram! " + sessionStorage.getItem("user");
 
   constructor() { }
 
@@ -19,6 +20,10 @@ export class NavbarComponent implements OnInit {
     } else {
       this.showToolbar = true;
     }
+  }
+
+  setTitle(title: string): void {
+    this.title = title;
   }
 
 }
