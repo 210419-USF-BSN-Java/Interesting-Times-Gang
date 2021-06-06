@@ -1,9 +1,6 @@
 <div *ngIf="show" class="div-toolbar">
     <ul>
         <li>
-            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Account'" [toolbox]="accountToolbox"></app-toolbox>
-        </li>
-        <li>
             <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Search'" [toolbox]="searchToolbox"></app-toolbox>
         </li>
         <li>

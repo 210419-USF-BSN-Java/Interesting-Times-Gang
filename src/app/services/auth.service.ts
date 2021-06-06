@@ -54,13 +54,13 @@ export class AuthService {
 
   updateInfo(
     user: User,
-  ): Observable<User> {
+  ): Observable<any> {
     return this.http.post(
       "http://localhost:8080/user/update",
       user
     ).pipe(
       tap(response => console.log(response)),
-      map(response => response as User)
+      map(response => response.toString())
     )
   }
 
