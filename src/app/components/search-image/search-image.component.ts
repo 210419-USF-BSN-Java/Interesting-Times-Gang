@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Image } from '../../models/image';
+import { ApiServiceService } from '../../services/api-service.service';
 
 @Component({
   selector: 'app-search-image',
@@ -15,7 +16,11 @@ export class SearchImageComponent {
   date?: Date;
   date1?: Date;
   date2?: Date;
+  imgObservable!: Array<Image>;
+  img?: Image;
+  imgA?: Array<Image>;
 
+  constructor(private apiService: ApiServiceService) { }
   changeView(num: number) {
     this.view = num;
     console.log(this.view);
@@ -24,21 +29,21 @@ export class SearchImageComponent {
     switch (this.view) {
       case 1 :
         console.log(this.tag);
+        
         break;
       case 2 :
         if (this.dateStr) {
-          this.date = new Date(this.dateStr);
-          console.log(this.date);
+          let url: string = 'date/?userId=2&imageDate=' + this.dateStr;
+          this.apiService.getImage(url).subscribe((data: Array<Image>) => this.imgObservable = data);
+        this.img = this.imgObservable[0];
         }
         break;
       case 3 :
-        if (this.date1Str) {
-          this.date1 = new Date(this.date1Str);
-          console.log(this.date1);
-        }
-        if (this.date2Str) {
-          this.date2 = new Date(this.date2Str);
-          console.log(this.date2);
+        if (this.date1Str && this.date2Str) {
+          let url: string = 'range/?userId=2&startDate=' + this.date1Str + '&endDate=' + this.date2Str;
+          this.apiService.getImage(url)
+          .subscribe((data: Array<Image>) => this.imgObservable = data);
+          this.imgA = this.imgObservable;
         }
         break;
     }
