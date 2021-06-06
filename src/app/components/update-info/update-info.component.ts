@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UpdateInfoComponent implements OnInit {
   user: User = {
-    userId: 0,
+    id: 0,
     firstName: "",
     lastName: "",
     username: "",

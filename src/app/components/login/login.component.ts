@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
           this.message = "Didn't work. Please Try Again!"
         } else {
           var num = new Number(10);
-          num = Number(response.userId);
-          console.log("signin method: " + response.userId);
-          sessionStorage.setItem("userId", response.userId.toString());
+          num = Number(response.id);
+          console.log("signin method: " + response);
+          sessionStorage.setItem("username", response.id.toString());
           this.router.navigate(['dashboard']); //need to route somewhere? dashboard maybe
         }
       },
