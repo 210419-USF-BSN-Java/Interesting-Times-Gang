@@ -3,22 +3,35 @@
         <div class="div-inner-wrapper-header-main">
             <h1 class="h1-main-header">Cosmogram</h1>
         </div>
-        <app-navbar></app-navbar>
+        <app-navbar (emitComponentName)="changeComponent($event)"></app-navbar>
     </div>
-    
-    <div class="div-body-main" (click)="click()">
-        <app-single-image *ngIf="currentDayImg" [image]="currentDayImg"></app-single-image>
-
-        <!-- <app-search-image-date></app-search-image-date> 
+    <!-- <app-search-image-date></app-search-image-date> 
         
         ^^^^ SEARCH BY DATE ^^^^ -->
 
-        <!-- <app-search-image-range></app-search-image-range>
+    <!-- <app-search-image-range></app-search-image-range>
 
         ^^^^ SEARCH BY RANGE ^^^^ -->
 
-        <!-- <app-search-image-random></app-search-image-random>
+    <!-- <app-search-image-random></app-search-image-random>
 
         ^^^^ SEARCH BY RANDOM ^^^^ -->
+
+    <div [ngSwitch]="currentComponent" class="div-body-main">
+        <!-- <button (click)="showImage()">clicky</button> -->
+        <div *ngSwitchCase="'default'">
+            <app-single-image *ngIf="currentDayImg" [image]="currentDayImg"></app-single-image>
+
+            <!-- <app-single-image [image]="img"></app-single-image> -->
+        </div>
+        <div *ngSwitchCase="'Search'">
+            <app-search-image></app-search-image>
+        </div>
+        <div *ngSwitchCase="'Albums'">
+            <app-multi-image></app-multi-image>
+        </div>
+        <div *ngSwitchCase="'Info'">
+            <app-update-info></app-update-info>
+        </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Image } from '../../models/image';
-import { ApiServiceService } from '../../services/api-service.service'
+import { ApiServiceService } from '../../services/api-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +12,22 @@ export class DashboardComponent implements OnInit {
   currentDayImg?: Image;
   imgObservable!: Array<Image>;
   extension = '?userId=2';
+  @Input() currentComponent: string = "default"; //sets default to single image component
+
+  img?: Image;
+  imgA!: Array<Image>;
+
+  url = 'http://localhost:8080/image/random/?userId=2';
   ngOnInit(): void {
     this.apiService.getImage(this.extension)
-    .subscribe((data: Array<Image>) => { this.imgObservable = data;
-    this.currentDayImg = this.imgObservable[0]; }
-    );
+      .subscribe((data: Array<Image>) => {
+        this.imgObservable = data;
+        this.currentDayImg = this.imgObservable[0];
+      }
+      );
+  }
+
+  changeComponent(componentName: string) {
+    this.currentComponent = componentName;
   }
 }

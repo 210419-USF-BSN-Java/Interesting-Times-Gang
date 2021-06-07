@@ -1,4 +1,6 @@
+import { Album } from "src/app/models/album";
+
 export interface Tool {
-    title: string;
-    url: string;
+    title?: string;
+    album?: Album;
 }
