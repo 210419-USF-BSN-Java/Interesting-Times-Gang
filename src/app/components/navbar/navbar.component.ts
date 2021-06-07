@@ -11,7 +11,7 @@ import { Tool } from '../tool-components/tool';
 })
 export class NavbarComponent implements OnInit {
   showToolbar: boolean = false;
-  title?: string = sessionStorage.getItem("user") || "";
+  title?: string = "Welcome";
   @Input() currentComponent: string = "";
   @Output() emitComponentName = new EventEmitter<string>();
   albums?: Album[];
