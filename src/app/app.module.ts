@@ -17,6 +17,8 @@ import { MultiImageComponent } from './components/multi-image/multi-image.compon
 import { SearchImageComponent } from './components/search-image/search-image.component';
 import { SearchImageDateComponent } from './components/search-image-date/search-image-date.component';
 import { SearchImageRangeComponent } from './components/search-image-range/search-image-range.component';
+import { SearchImageTagComponent } from './components/search-image-tag/search-image-tag.component';
+import { SearchImageRandomComponent } from './components/search-image-random/search-image-random.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SearchImageRangeComponent } from './components/search-image-range/searc
     MultiImageComponent,
     SearchImageComponent,
     SearchImageDateComponent,
-    SearchImageRangeComponent
+    SearchImageRangeComponent,
+    SearchImageTagComponent,
+    SearchImageRandomComponent
   ],
   imports: [
     BrowserModule,
