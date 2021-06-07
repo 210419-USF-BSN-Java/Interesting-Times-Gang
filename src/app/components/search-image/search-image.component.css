@@ -1,19 +1,12 @@
 .main {
-<<<<<<< HEAD
-    width: 600px;
-=======
     height: auto;
     min-width: 50%;
->>>>>>> dba7f25b349185f29286582d04fc1a08b2e58599
     padding: 32px;
     border: 5px solid #1d1135;
     border-radius: 5px;
     margin: 5px auto;
-<<<<<<< HEAD
-=======
     margin-left: 10em;
     margin-right: 10em;
->>>>>>> dba7f25b349185f29286582d04fc1a08b2e58599
     background-color: #a9d5f4;
 }
 .col-sm-6 {
