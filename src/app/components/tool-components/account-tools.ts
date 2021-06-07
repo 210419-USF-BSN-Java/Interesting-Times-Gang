@@ -1,5 +1,5 @@
 import { Tool } from "./tool";
 
 export const accountTools: Tool[]=[
-    {title: "Update Account", url: "/updateInfo"},
+    {title: "Update Account"},
 ]

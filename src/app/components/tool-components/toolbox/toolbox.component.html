@@ -1,6 +1,6 @@
 <h3 (click)="showThisToolbox()">{{ title }}</h3>
 <div *ngIf="selectedToolbox === title" class="div-tool-content">
     <div *ngFor="let tool of toolbox">
-        <h6 class="div-content" routerLink="{{ tool.url }}">{{ tool.title }}</h6>
+        <h6 class="div-content">{{ tool.title }}</h6>
     </div>
 </div>
