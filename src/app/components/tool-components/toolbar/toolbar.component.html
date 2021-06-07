@@ -2,11 +2,11 @@
     <ul>
         <li>
             <!-- can change toolbox by typing class name of --tools.ts -->
-            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Search'"
+            <app-toolbox (tellToolBar)="selectToolbox($event)" (giveToolbarTool)="acceptTool($event)" [selectedToolbox]="selectedToolbox" [title]="'Search'"
                 [toolbox]="searchToolbox"></app-toolbox>
         </li>
         <li>
-            <app-toolbox (tellToolBar)="selectToolbox($event)" [selectedToolbox]="selectedToolbox" [title]="'Albums'"
+            <app-toolbox (tellToolBar)="selectToolbox($event)" (giveToolbarTool)="acceptTool($event)" [selectedToolbox]="selectedToolbox" [title]="'Albums'"
                 [toolbox]="albumsToolbox"></app-toolbox>
         </li>
     </ul>

@@ -3,7 +3,8 @@
         <div class="div-inner-wrapper-header-main">
             <h1 class="h1-main-header">Cosmogram</h1>
         </div>
-        <app-navbar (emitComponentName)="changeComponent($event)"></app-navbar>
+        <!-- <app-navbar (emitComponentName)="changeComponent($event)"></app-navbar> -->
+        <app-navbar (giveDashboardTool)="dashboardAcceptTool($event)"></app-navbar>
     </div>
     <!-- <app-search-image-date></app-search-image-date> 
         
@@ -21,14 +22,19 @@
         <!-- <button (click)="showImage()">clicky</button> -->
         <div *ngSwitchCase="'default'">
             <app-single-image *ngIf="currentDayImg" [image]="currentDayImg"></app-single-image>
-
             <!-- <app-single-image [image]="img"></app-single-image> -->
         </div>
-        <div *ngSwitchCase="'Search'">
+        <div *ngSwitchCase="'Tags'">
             <app-search-image></app-search-image>
         </div>
-        <div *ngSwitchCase="'Albums'">
-            <app-multi-image></app-multi-image>
+        <div *ngSwitchCase="'Date'">
+            <app-search-image-date></app-search-image-date>
+        </div>
+        <div *ngSwitchCase="'Range'">
+            <app-search-image-range></app-search-image-range>
+        </div>
+        <div *ngSwitchCase="'Random'">
+            <app-search-image-random></app-search-image-random>
         </div>
     </div>
 </div>

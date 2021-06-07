@@ -13,5 +13,5 @@
         <div class="div-button" (click)="toggleToolbar()"><i class="fas fa-bars fa-2x"></i></div>
     </nav>
 
-    <app-toolbar (notifyNavBarTitle)="setTitle($event)" [show]="showToolbar"></app-toolbar>
+    <app-toolbar (notifyNavBarTitle)="setTitle($event)" [show]="showToolbar" (giveNavbarTool)="acceptNavsTool($event)"></app-toolbar>
 </div>

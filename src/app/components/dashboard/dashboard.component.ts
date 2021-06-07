@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Image } from '../../models/image';
 import { ApiServiceService } from '../../services/api-service.service';
+import { Tool } from '../tool-components/tool';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +9,13 @@ import { ApiServiceService } from '../../services/api-service.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  @Input() currentToolDashboard?: Tool;
+  @Input() currentComponent: string = "default"; //sets default to single image component
+
   constructor(private apiService: ApiServiceService) { }
   currentDayImg?: Image;
   imgObservable!: Array<Image>;
   extension = '?userId=2';
-  @Input() currentComponent: string = "default"; //sets default to single image component
 
   img?: Image;
   imgA!: Array<Image>;
@@ -23,11 +26,11 @@ export class DashboardComponent implements OnInit {
       .subscribe((data: Array<Image>) => {
         this.imgObservable = data;
         this.currentDayImg = this.imgObservable[0];
-      }
-      );
+      });
   }
 
-  changeComponent(componentName: string) {
-    this.currentComponent = componentName;
+  dashboardAcceptTool(tool: Tool): void {
+    this.currentToolDashboard = tool;
+    this.currentComponent = tool.title || "default";
   }
 }

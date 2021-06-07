@@ -19,6 +19,8 @@ export class ToolbarComponent implements OnInit {
   infoToolbox: Tool[] = infoTools;
   selectedToolbox: string = "";
   @Output() notifyNavBarTitle = new EventEmitter();
+  @Input() selectedTool?: Tool;
+  @Output() giveNavbarTool = new EventEmitter<Tool>();
 
 
   constructor() { }
@@ -29,5 +31,10 @@ export class ToolbarComponent implements OnInit {
   selectToolbox(toolBoxTitle: string): void {
     this.selectedToolbox = toolBoxTitle;
     this.notifyNavBarTitle.emit(toolBoxTitle);
+  }
+
+  acceptTool(tool: Tool){
+    this.selectedTool = tool;
+    this.giveNavbarTool.emit(this.selectedTool);
   }
 }

@@ -13,8 +13,11 @@ export class NavbarComponent implements OnInit {
   showToolbar: boolean = false;
   title?: string = "Welcome";
   @Input() currentComponent: string = "";
-  @Output() emitComponentName = new EventEmitter<string>();
+  // @Output() emitComponentName = new EventEmitter<string>();
   albums?: Album[];
+
+  @Input() selectedToolNav?: Tool;
+  @Output() giveDashboardTool = new EventEmitter<Tool>();
 
 
   constructor(private http: HttpClient) { }
@@ -51,7 +54,11 @@ export class NavbarComponent implements OnInit {
 
   setTitle(title: string): void {
     this.title = title;
-    this.emitComponentName.emit(title);
+    // this.emitComponentName.emit(title);
   }
 
+  acceptNavsTool(tool: Tool): void {
+    this.selectedToolNav = tool;
+    this.giveDashboardTool.emit(this.selectedToolNav);
+  }
 }

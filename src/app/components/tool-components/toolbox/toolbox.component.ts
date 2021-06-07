@@ -12,13 +12,21 @@ export class ToolboxComponent implements OnInit {
   @Input() toolbox?: Tool[];
   @Input() selectedToolbox?: string;
   @Output() tellToolBar = new EventEmitter<string>();
+  @Output() tellDashboard = new EventEmitter<string>();
+  @Output() giveToolbarTool = new EventEmitter<Tool>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  showThisToolbox(){
+  showThisToolbox() {
     this.tellToolBar.emit(this.title);
   }
+
+  startPassingTool(tool: Tool) {
+    // this.tellDashboard.emit(tool.title);
+    this.giveToolbarTool.emit(tool);
+  }
+
 }
