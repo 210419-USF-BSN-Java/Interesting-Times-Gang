@@ -4,9 +4,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<div>
+<div class="div-main-wrapper">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm1">
             <div class="main overflow-auto">
                 <div class="alert alert-primary center" role="alert"><h1>"Insert Title Here"</h1></div>
                 <br>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm">
+        <div class="col-sm2">
             <app-single-image *ngIf="currentImg" [image]="currentImg"></app-single-image>
         </div>
     </div>
