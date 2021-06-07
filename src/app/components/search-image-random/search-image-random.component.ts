@@ -9,12 +9,13 @@ import { ApiServiceService } from '../../services/api-service.service';
 })
 export class SearchImageRandomComponent implements OnInit {
   ngOnInit(): void {
+    this.random();
+
   }
   imgObservable!: Array<Image>;
   img?: Image;
 
   constructor(private apiService: ApiServiceService) { }
-
   random() {
     let url: string = 'random/?userId=2';
     this.apiService.getImage(url).subscribe((data: Array<Image>) => {
@@ -22,4 +23,5 @@ export class SearchImageRandomComponent implements OnInit {
       this.img = this.imgObservable[0];
     });
   }
+
 }

@@ -2,6 +2,9 @@ import { Component, OnChanges, Input } from '@angular/core';
 import { tags, albums, DailyImage } from '../../images';
 import { Image } from '../../models/image';
 import { HttpClient } from '@angular/common/http';
+import { Tool } from '../tool-components/tool';
+import { albumsTools } from '../tool-components/albumsTools';
+
 
 @Component({
   selector: 'app-single-image',
@@ -19,6 +22,10 @@ export class SingleImageComponent implements OnChanges {
   dropdownAlbum: string = "";
   dropdownTag: string = "";
   userRole: number = 2;
+  albumsToolbox: Tool[] = albumsTools;
+
+
+
   constructor(private http: HttpClient) { }
 
   mouseEnter(num: number) {
