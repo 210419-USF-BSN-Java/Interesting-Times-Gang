@@ -19,6 +19,7 @@ import { SearchImageDateComponent } from './components/search-image-date/search-
 import { SearchImageRangeComponent } from './components/search-image-range/search-image-range.component';
 import { SearchImageTagComponent } from './components/search-image-tag/search-image-tag.component';
 import { SearchImageRandomComponent } from './components/search-image-random/search-image-random.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SearchImageRandomComponent } from './components/search-image-random/sea
     SearchImageDateComponent,
     SearchImageRangeComponent,
     SearchImageTagComponent,
-    SearchImageRandomComponent
+    SearchImageRandomComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
