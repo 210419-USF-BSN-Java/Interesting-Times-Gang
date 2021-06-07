@@ -35,7 +35,8 @@
     background-color: #ddd
 }
 .main {
-    width: 800px;
+    height: auto;
+    width: 90%;
     padding: 32px;
     border: 5px solid #1d1135;
     border-radius: 5px;
