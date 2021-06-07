@@ -20,8 +20,10 @@ export class SearchImageRangeComponent implements OnInit {
     if (this.date1Str && this.date2Str) {
       let url: string = 'range/?userId=2&startDate=' + this.date1Str + '&endDate=' + this.date2Str;
       this.apiService.getImage(url)
-      .subscribe((data: Array<Image>) => this.imgObservable = data);
-      this.imgA = this.imgObservable;
+        .subscribe((data: Array<Image>) => {
+          this.imgObservable = data;
+          this.imgA = this.imgObservable;
+        });
     }
   }
 }

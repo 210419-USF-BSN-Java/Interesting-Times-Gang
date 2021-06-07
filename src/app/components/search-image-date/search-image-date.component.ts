@@ -19,8 +19,10 @@ export class SearchImageDateComponent implements OnInit {
   search() {
     if (this.dateStr) {
       let url: string = 'date/?userId=2&imageDate=' + this.dateStr;
-      this.apiService.getImage(url).subscribe((data: Array<Image>) => this.imgObservable = data);
-    this.img = this.imgObservable[0];
+      this.apiService.getImage(url).subscribe((data: Array<Image>) => {
+        this.imgObservable = data;
+        this.img = this.imgObservable[0];
+      });
     }
   }
 }

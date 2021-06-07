@@ -14,6 +14,9 @@ export class SearchImageTagComponent implements OnInit {
   ngOnInit() { }
   constructor(private apiService: ApiServiceService) { }
   search() {
+    // this.apiService.getImage("tag/?tagName=" + this.tag).subscribe(response => {
     console.log(this.tag);
+
+    // })
   }
 }

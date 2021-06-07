@@ -27,22 +27,22 @@ export class SearchImageComponent {
   }
   search() {
     switch (this.view) {
-      case 1 :
+      case 1:
         console.log(this.tag);
-        
+
         break;
-      case 2 :
+      case 2:
         if (this.dateStr) {
           let url: string = 'date/?userId=2&imageDate=' + this.dateStr;
           this.apiService.getImage(url).subscribe((data: Array<Image>) => this.imgObservable = data);
-        this.img = this.imgObservable[0];
+          this.img = this.imgObservable[0];
         }
         break;
-      case 3 :
+      case 3:
         if (this.date1Str && this.date2Str) {
           let url: string = 'range/?userId=2&startDate=' + this.date1Str + '&endDate=' + this.date2Str;
           this.apiService.getImage(url)
-          .subscribe((data: Array<Image>) => this.imgObservable = data);
+            .subscribe((data: Array<Image>) => this.imgObservable = data);
           this.imgA = this.imgObservable;
         }
         break;

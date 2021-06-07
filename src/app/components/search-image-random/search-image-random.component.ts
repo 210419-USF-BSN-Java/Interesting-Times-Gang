@@ -17,7 +17,9 @@ export class SearchImageRandomComponent implements OnInit {
 
   random() {
     let url: string = 'random/?userId=2';
-    this.apiService.getImage(url).subscribe((data: Array<Image>) => this.imgObservable = data);
-    this.img = this.imgObservable[0];
+    this.apiService.getImage(url).subscribe((data: Array<Image>) => {
+      this.imgObservable = data;
+      this.img = this.imgObservable[0];
+    });
   }
 }
