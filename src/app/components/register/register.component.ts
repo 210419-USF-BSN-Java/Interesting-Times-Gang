@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
 
   submitted: boolean = false;
 
+  height: Number = window.innerHeight;
+
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {

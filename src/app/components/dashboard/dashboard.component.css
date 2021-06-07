@@ -1,6 +1,6 @@
 .div-outter-wrapper-header-main {
     background-color: #3498DB;
-    padding-bottom: 10em;
+    padding-bottom: 2em;
     /* height: 1000px; */
 }
 .div-top-dash-wrapper {
@@ -20,6 +20,9 @@
     grid-template-columns: 1fr;
 
     height: 7em;
+}
+.div-body-main {
+    padding-top: 2em;
 }
 .h1-main-header {
     grid-row: 1;
