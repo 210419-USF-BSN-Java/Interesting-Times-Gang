@@ -23,6 +23,8 @@ export class NavbarComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+
+    albumsTools.forEach(a => albumsTools.pop());
     let userAlbumsUrl = ("http://localhost:8080/album/?userId=" + sessionStorage.getItem("userId"));
     this.http.get<Album[]>(userAlbumsUrl).subscribe(
       albums => {

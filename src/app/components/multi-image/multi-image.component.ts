@@ -7,7 +7,7 @@ import { Image } from '../../models/image';
   styleUrls: ['./multi-image.component.css']
 })
 export class MultiImageComponent {
-  @Input() imageArray? = Array<Image>();
+  @Input() imageArray?= Array<Image>();
   currentImg?: Image;
   selectImg(image: Image) {
     this.currentImg = image;

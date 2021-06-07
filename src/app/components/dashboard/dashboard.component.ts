@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { albums } from 'src/app/images';
+import { Album } from 'src/app/models/album';
 import { Image } from '../../models/image';
 import { ApiServiceService } from '../../services/api-service.service';
 import { Tool } from '../tool-components/tool';
@@ -11,11 +13,13 @@ import { Tool } from '../tool-components/tool';
 export class DashboardComponent implements OnInit {
   @Input() currentToolDashboard?: Tool;
   @Input() currentComponent: string = "default"; //sets default to single image component
+  @Input() currentComponentAlbum?: Album;
+  currentComponentImageArray?: Image[];
 
   constructor(private apiService: ApiServiceService) { }
   currentDayImg?: Image;
   imgObservable!: Array<Image>;
-  extension = '?userId=2';
+  extension = '?userId=' + sessionStorage.getItem("userId");
 
   img?: Image;
   imgA!: Array<Image>;
@@ -32,5 +36,27 @@ export class DashboardComponent implements OnInit {
   dashboardAcceptTool(tool: Tool): void {
     this.currentToolDashboard = tool;
     this.currentComponent = tool.title || "default";
+    tool.album ? this.currentComponentAlbum = tool.album : [];
+    if (this.currentComponentAlbum) {
+      let imageArray: Image[] = [];
+
+      console.log("Dashboard :" + tool.album);
+      console.log(tool.album);
+      console.log(tool.album?.imageDates);
+
+      for (let thisDate of this.currentComponentAlbum.imageDates) {
+        let apiUrl: string = "/date/?imageDate=" + thisDate + "&userId=" + sessionStorage.getItem("userId");
+        this.apiService.getImage(apiUrl).subscribe((data: Array<Image>) => {
+          imageArray.push(data[0]);
+        });
+      }
+      this.currentComponentImageArray = imageArray;
+    }
   }
+
+
+
+
+
+
 }
