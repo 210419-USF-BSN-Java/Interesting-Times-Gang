@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Album } from 'src/app/models/album';
 import { albumsTools } from '../tool-components/albumsTools';
 import { Tool } from '../tool-components/tool';
-import { ToolsComponent } from '../tool-components/tools/tools.component';
 
 @Component({
   selector: 'app-navbar',
