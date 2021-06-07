@@ -38,9 +38,8 @@
         </div>
         <!-- MAKE DOUBLY SURE THAT THIS GOES ON THE BOTTOM OF THIS LIST-->
         <div *ngIf="currentComponentAlbum">
-            <app-multi-image [imageArray]="currentComponentImageArray" *ngSwitchCase="currentComponent"></app-multi-image>
+            <app-multi-image [albumTitle]="currentComponent" [imageArray]="currentComponentImageArray"
+                *ngSwitchCase="currentComponent"></app-multi-image>
         </div>
-
-
     </div>
 </div>

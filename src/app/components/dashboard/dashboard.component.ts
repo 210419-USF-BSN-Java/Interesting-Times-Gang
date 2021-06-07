@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
-import { albums } from 'src/app/images';
+import { Component, Input, OnInit } from '@angular/core';
 import { Album } from 'src/app/models/album';
 import { Image } from '../../models/image';
 import { ApiServiceService } from '../../services/api-service.service';

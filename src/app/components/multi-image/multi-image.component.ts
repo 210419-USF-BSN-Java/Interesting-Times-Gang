@@ -8,6 +8,7 @@ import { Image } from '../../models/image';
 })
 export class MultiImageComponent {
   @Input() imageArray?= Array<Image>();
+  @Input() albumTitle?: string;
   currentImg?: Image;
   selectImg(image: Image) {
     this.currentImg = image;
