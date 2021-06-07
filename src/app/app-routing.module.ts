@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "updateInfo", component: UpdateInfoComponent },
   { path: "dashboard/multi", component: MultiImageComponent },
+  // { path: "logout", component: LogoutComponent },
   // search image, search image component
   // create tag, create tag component
   // tag management
