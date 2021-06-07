@@ -31,11 +31,11 @@ export class NavbarComponent implements OnInit {
             title: a.album.albumName,
             album: a,
           };
-          console.log("Storing data: " + tool);
-          console.log(tool);
+          // console.log("Storing data: " + tool);
+          // console.log(tool);
           albumsTools.push(tool);
-          console.log("Check document: ");
-          console.log(albumsTools);
+          // console.log("Check document: ");
+          // console.log(albumsTools);
         }
       }
     );
